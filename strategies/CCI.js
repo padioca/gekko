@@ -19,9 +19,9 @@ method.init = function() {
   };
   this.historySize = this.settings.history;
   this.ppoadv = 'none';
-  this.uplevel = this.settings.thresholds.up;
-  this.downlevel = this.settings.thresholds.down;
-  this.persisted = this.settings.thresholds.persistence;
+  this.uplevel = this.settings.up;
+  this.downlevel = this.settings.down;
+  this.persisted = this.settings.persistence;
 
   // log.debug("CCI started with:\nup:\t", this.uplevel, "\ndown:\t", this.downlevel, "\npersistence:\t", this.persisted);
   // define the indicators we need

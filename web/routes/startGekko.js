@@ -83,8 +83,8 @@ module.exports = function *() {
       });
     }
 
-    if(_.get(event, 'log'))
-      return logger.write(event.log);
+    //if(_.get(event, 'log'))
+      //return logger.write(event.log);
 
     if(!event || !event.type)
       return;
