@@ -73,7 +73,7 @@ method.check = function(candle) {
   // if it is it should move there
   var ppoHist = result - ppoSignal;
 
-  if(ppoHist > this.settings.thresholds.up) {
+  if(ppoHist > this.settings.up) {
 
     // new trend detected
     if(this.trend.direction !== 'up')
@@ -88,7 +88,7 @@ method.check = function(candle) {
 
     log.debug('In uptrend since', this.trend.duration, 'candle(s)');
 
-    if(this.trend.duration >= this.settings.thresholds.persistence)
+    if(this.trend.duration >= this.settings.persistence)
       this.trend.persisted = true;
 
     if(this.trend.persisted && !this.trend.adviced) {
@@ -97,7 +97,7 @@ method.check = function(candle) {
     } else
       this.advice();
 
-  } else if(ppoHist < this.settings.thresholds.down) {
+  } else if(ppoHist < this.settings.down) {
 
     // new trend detected
     if(this.trend.direction !== 'down')
@@ -112,7 +112,7 @@ method.check = function(candle) {
 
     log.debug('In downtrend since', this.trend.duration, 'candle(s)');
 
-    if(this.trend.duration >= this.settings.thresholds.persistence)
+    if(this.trend.duration >= this.settings.persistence)
       this.trend.persisted = true;
 
     if(this.trend.persisted && !this.trend.adviced) {

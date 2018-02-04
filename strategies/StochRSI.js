@@ -61,7 +61,7 @@ method.log = function() {
 }
 
 method.check = function() {
-	if(this.stochRSI > this.settings.thresholds.high) {
+	if(this.stochRSI > this.settings.high) {
 		// new trend detected
 		if(this.trend.direction !== 'high')
 			this.trend = {
@@ -75,7 +75,7 @@ method.check = function() {
 
 		log.debug('In high since', this.trend.duration, 'candle(s)');
 
-		if(this.trend.duration >= this.settings.thresholds.persistence)
+		if(this.trend.duration >= this.settings.persistence)
 			this.trend.persisted = true;
 
 		if(this.trend.persisted && !this.trend.adviced) {
@@ -84,7 +84,7 @@ method.check = function() {
 		} else
 			this.advice();
 
-	} else if(this.stochRSI < this.settings.thresholds.low) {
+	} else if(this.stochRSI < this.settings.low) {
 
 		// new trend detected
 		if(this.trend.direction !== 'low')
@@ -99,7 +99,7 @@ method.check = function() {
 
 		log.debug('In low since', this.trend.duration, 'candle(s)');
 
-		if(this.trend.duration >= this.settings.thresholds.persistence)
+		if(this.trend.duration >= this.settings.persistence)
 			this.trend.persisted = true;
 
 		if(this.trend.persisted && !this.trend.adviced) {
