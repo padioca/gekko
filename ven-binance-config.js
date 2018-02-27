@@ -7,7 +7,7 @@ var config = {};
 //                          GENERAL SETTINGS
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-config.debug = false; // for additional logging / debugging
+config.debug = true; // for additional logging / debugging
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                         WATCHING A MARKET
@@ -17,7 +17,7 @@ config.watch = {
 
   // see https://gekko.wizb.it/docs/introduction/supported_exchanges.html
   exchange: 'binance',
-  currency: 'BTC',
+  currency: 'ETH',
   asset: 'VEN',
 
   // You can set your own tickrate (refresh rate).
@@ -33,8 +33,8 @@ config.watch = {
 config.tradingAdvisor = {
   enabled: true,
   method: 'RSI',
-  candleSize: 10,
-  historySize: 38,
+  candleSize: 120,
+  historySize: 5,
   adapter: 'sqlite'
 }
 
@@ -103,11 +103,11 @@ config.varPPO = {
 // RSI settings:
 config.RSI = {
   interval: 8,
-    low: 17,
-    high: 91,
+    low: 30,
+    high: 87,
     // How many candle intervals should a trend persist
     // before we consider it real?
-    persistence: 3
+    persistence: 1
 };
 
 // TSI settings:

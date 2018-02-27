@@ -7,7 +7,7 @@ var config = {};
 //                          GENERAL SETTINGS
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-config.debug = false; // for additional logging / debugging
+config.debug = true; // for additional logging / debugging
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                         WATCHING A MARKET
@@ -16,9 +16,9 @@ config.debug = false; // for additional logging / debugging
 config.watch = {
 
   // see https://gekko.wizb.it/docs/introduction/supported_exchanges.html
-  exchange: 'binance',
-  currency: 'BTC',
-  asset: 'NEO',
+  exchange: 'gdax',
+  currency: 'USD',
+  asset: 'ETH',
 
   // You can set your own tickrate (refresh rate).
   // If you don't set it, the defaults are 2 sec for
@@ -34,7 +34,7 @@ config.tradingAdvisor = {
   enabled: true,
   method: 'RSI',
   candleSize: 10,
-  historySize: 0,
+  historySize: 11,
   adapter: 'sqlite'
 }
 
@@ -211,10 +211,10 @@ config.performanceAnalyzer = {
 // watched by `config.watch`.
 config.trader = {
   enabled: true,
-  key: 'AM8Mj1IMt59PI1J3l5Cix76crYfQImMzyfP7NnFF1BW9kD1YON8MhtvQQ2CGgNa3',
-  secret: '1fuFRNVRVjswyysiJ9BnFwSb9OSUJroevtw6vZVw5UpGvn8WLVCt9ZXbCkUmq6Mp',
+  key: '9284cc38b645dee74a5247eb4f1c8ac8',
+  secret: '8cg/8k1RXMpElVZ9yhZ4Y6gY26tk25OMR5CVyfcQqUCua/Ag8hws9uuPlnOmQZtuc3BewPZGOkOoR+19s2rmGA==',
   username: '', // your username, only required for specific exchanges.
-  passphrase: '', // GDAX, requires a passphrase.
+  passphrase: 'klva4id10r', // GDAX, requires a passphrase.
   orderUpdateDelay: 1, // Number of minutes to adjust unfilled order prices
 }
 
@@ -270,7 +270,7 @@ config.mailer = {
 
 config.pushbullet = {
     // sends pushbullets if true
-  enabled: false,
+  enabled: true,
     // Send 'Gekko starting' message if true
   sendMessageOnStart: true,
     // disable advice printout if it's soft

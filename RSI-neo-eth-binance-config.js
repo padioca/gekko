@@ -7,7 +7,7 @@ var config = {};
 //                          GENERAL SETTINGS
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-config.debug = false; // for additional logging / debugging
+config.debug = true; // for additional logging / debugging
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                         WATCHING A MARKET
@@ -16,9 +16,9 @@ config.debug = false; // for additional logging / debugging
 config.watch = {
 
   // see https://gekko.wizb.it/docs/introduction/supported_exchanges.html
-  exchange: 'poloniex',
-  currency: 'USDT',
-  asset: 'ETH',
+  exchange: 'binance',
+  currency: 'ETH',
+  asset: 'NEO',
 
   // You can set your own tickrate (refresh rate).
   // If you don't set it, the defaults are 2 sec for
@@ -33,8 +33,8 @@ config.watch = {
 config.tradingAdvisor = {
   enabled: true,
   method: 'RSI',
-  candleSize: 10,
-  historySize: 11,
+  candleSize: 15,
+  historySize: 15,
   adapter: 'sqlite'
 }
 
@@ -102,12 +102,12 @@ config.varPPO = {
 
 // RSI settings:
 config.RSI = {
-  interval: 13,
-    low: 27,
-    high: 84,
+  interval: 18,
+    low: 32,
+    high: 75,
     // How many candle intervals should a trend persist
     // before we consider it real?
-    persistence: 2
+    persistence: 3
 };
 
 // TSI settings:
@@ -211,8 +211,8 @@ config.performanceAnalyzer = {
 // watched by `config.watch`.
 config.trader = {
   enabled: true,
-  key: 'pQEdMpWod3OB86ly',
-  secret: '',
+  key: 'AM8Mj1IMt59PI1J3l5Cix76crYfQImMzyfP7NnFF1BW9kD1YON8MhtvQQ2CGgNa3',
+  secret: '1fuFRNVRVjswyysiJ9BnFwSb9OSUJroevtw6vZVw5UpGvn8WLVCt9ZXbCkUmq6Mp',
   username: '', // your username, only required for specific exchanges.
   passphrase: '', // GDAX, requires a passphrase.
   orderUpdateDelay: 1, // Number of minutes to adjust unfilled order prices
@@ -270,7 +270,7 @@ config.mailer = {
 
 config.pushbullet = {
     // sends pushbullets if true
-  enabled: true,
+  enabled: false,
     // Send 'Gekko starting' message if true
   sendMessageOnStart: true,
     // disable advice printout if it's soft
