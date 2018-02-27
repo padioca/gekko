@@ -24,6 +24,10 @@ config.adviceWriter = {
   muteSoft: true,
 }
 
+config.trader = {
+  orderUpdateDelay: 1 // Number of minutes to adjust unfilled order prices
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //                       CONFIGURING ADAPTER
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -46,8 +50,8 @@ config.sqlite = {
 config.postgresql = {
   path: 'plugins/postgresql',
   version: 0.1,
-  connectionString: 'postgres://user:pass@localhost:5432', // if default port
-  database: null, // if set, we'll put all tables into a single database.
+  connectionString: 'postgres://gekko:gekko@localhost:5433', // if default port
+  database: 'gekkoDB', // if set, we'll put all tables into a single database.
   schema: 'public',
   dependencies: [{
     module: 'pg',

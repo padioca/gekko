@@ -40,7 +40,7 @@ method.check = function(candle) {
 
   var message = '@ ' + price.toFixed(8) + ' (' + diff.toFixed(5) + ')';
 
-  if(diff > this.settings.thresholds.up) {
+  if(diff > this.settings.up) {
     log.debug('we are currently in uptrend', message);
 
     if(this.currentTrend !== 'up') {
@@ -49,7 +49,7 @@ method.check = function(candle) {
     } else
       this.advice();
 
-  } else if(diff < this.settings.thresholds.down) {
+  } else if(diff < this.settings.down) {
     log.debug('we are currently in a downtrend', message);
 
     if(this.currentTrend !== 'down') {

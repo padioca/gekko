@@ -59,7 +59,7 @@ method.log = function() {
 method.check = function() {
   var macddiff = this.indicators.macd.result;
 
-  if(macddiff > this.settings.thresholds.up) {
+  if(macddiff > this.settings.up) {
 
     // new trend detected
     if(this.trend.direction !== 'up')
@@ -75,7 +75,7 @@ method.check = function() {
 
     log.debug('In uptrend since', this.trend.duration, 'candle(s)');
 
-    if(this.trend.duration >= this.settings.thresholds.persistence)
+    if(this.trend.duration >= this.settings.persistence)
       this.trend.persisted = true;
 
     if(this.trend.persisted && !this.trend.adviced) {
@@ -84,7 +84,7 @@ method.check = function() {
     } else
       this.advice();
 
-  } else if(macddiff < this.settings.thresholds.down) {
+  } else if(macddiff < this.settings.down) {
 
     // new trend detected
     if(this.trend.direction !== 'down')
@@ -100,7 +100,7 @@ method.check = function() {
 
     log.debug('In downtrend since', this.trend.duration, 'candle(s)');
 
-    if(this.trend.duration >= this.settings.thresholds.persistence)
+    if(this.trend.duration >= this.settings.persistence)
       this.trend.persisted = true;
 
     if(this.trend.persisted && !this.trend.adviced) {
