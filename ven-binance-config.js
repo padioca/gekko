@@ -33,8 +33,8 @@ config.watch = {
 config.tradingAdvisor = {
   enabled: true,
   method: 'RSI',
-  candleSize: 120,
-  historySize: 5,
+  candleSize: 5,
+  historySize: 39,
   adapter: 'sqlite'
 }
 
@@ -102,12 +102,12 @@ config.varPPO = {
 
 // RSI settings:
 config.RSI = {
-  interval: 8,
-    low: 30,
-    high: 87,
+  interval: 19,
+    low: 29,
+    high: 82,
     // How many candle intervals should a trend persist
     // before we consider it real?
-    persistence: 1
+    persistence: 3
 };
 
 // TSI settings:
@@ -190,7 +190,7 @@ config.paperTrader = {
   // start balance, on what the current balance is compared with
   simulationBalance: {
     // these are in the unit types configured in the watcher.
-    asset: 51.08,
+    asset: 167.50,
     currency: 0,
   },
   // how much fee in % does each trade cost?
