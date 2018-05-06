@@ -33,8 +33,8 @@ config.watch = {
 config.tradingAdvisor = {
   enabled: true,
   method: 'RSI',
-  candleSize: 15,
-  historySize: 15,
+  candleSize: 60,
+  historySize: 13,
   adapter: 'sqlite'
 }
 
@@ -102,9 +102,9 @@ config.varPPO = {
 
 // RSI settings:
 config.RSI = {
-  interval: 18,
-    low: 32,
-    high: 75,
+  interval: 15,
+    low: 29,
+    high: 74,
     // How many candle intervals should a trend persist
     // before we consider it real?
     persistence: 3
@@ -186,11 +186,11 @@ config['talib-macd'] = {
 config.paperTrader = {
   enabled: false,
   // report the profit in the currency or the asset?
-  reportInCurrency: true,
+  reportInCurrency: false,
   // start balance, on what the current balance is compared with
   simulationBalance: {
     // these are in the unit types configured in the watcher.
-    asset: 51.08,
+    asset: 4.99,
     currency: 0,
   },
   // how much fee in % does each trade cost?
